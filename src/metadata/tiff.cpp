@@ -823,6 +823,10 @@ int LibRaw::parse_tiff_ifd(int base)
     case 0x829d: /* 33437, FNumber */
       aperture = getreal(type);
       break;
+
+    case 0x8827: /* iso_speed */
+	  iso_speed = getreal(type);
+      break;
     case 0x9400:
       imCommon.exifAmbientTemperature = getreal(type);
       if ((imCommon.CameraTemperature > -273.15f) &&
